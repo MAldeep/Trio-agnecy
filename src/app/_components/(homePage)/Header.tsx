@@ -130,7 +130,12 @@ const Header = () => {
           className="intro-logo"
         />
       </div>
-      <Image src={logo} height={100} width={120} alt=" Logo" className="logo" />
+      <Link
+      className="logo"
+      href={"/"}
+      >
+        <Image src={logo} height={100} width={120} alt=" Logo" />
+      </Link>
       {/* NavLinks */}
       <div className="w-1/2 lg:flex justify-between items-center hidden links">
         {NavLinks.map((el, idx) => (

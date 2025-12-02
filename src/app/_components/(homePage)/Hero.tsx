@@ -96,7 +96,7 @@ const Hero = () => {
         </Link>
       </div>
       <div
-        className="w-full flex justify-center bg-red-500"
+        className="w-full flex justify-center"
         id="hero_image"
         style={{ height: "60vh", width: "60vw" , borderRadius : "32px", overflow : "hidden"}}
       >
