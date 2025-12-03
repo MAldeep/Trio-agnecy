@@ -16,7 +16,7 @@ const AnalyticsDashboard: React.FC = () => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: svgRef.current,
-        start: "top 90%",
+        start: "top bottom",
         scrub : true,
       }
     });
