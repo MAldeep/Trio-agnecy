@@ -1,11 +1,26 @@
-import SingleService from "./SingleService"
+import DigitalMarketingSubServices from "./DigitalMarketingSubServices";
+import GraphicDesignSubServices from "./GraphicDesignSubServices";
+import SingleService from "./SingleService";
+import WebMobileAppsSubServices from "./WebMobileAppsSubServices";
 
-const Services = () => {
+export default function Services() {
   return (
-    <div className="w-full border-t-[0.5px] border-b-gray-400">
-      <SingleService flex_dir="lg:flex-row" service_name="Digital Marketing"/>
+    <div className="w-full">
+      <SingleService
+        flex_dir="lg:flex-row"
+        service_name="Digital Marketing"
+        ComponentOfsub={DigitalMarketingSubServices}
+      />
+      <SingleService
+        flex_dir="lg:flex-row-reverse"
+        service_name="Graphic Design"
+        ComponentOfsub={GraphicDesignSubServices}
+      />
+      <SingleService
+        flex_dir="lg:flex-row"
+        service_name="Web & Mobile Apps"
+        ComponentOfsub={WebMobileAppsSubServices}
+      />
     </div>
-  )
+  );
 }
-
-export default Services
