@@ -8,7 +8,7 @@ import Services from "./_components/(homePage)/Services";
 const Home = () => {
   useEffect(() => {
     heroTimeline.play();
-  }, [])
+  }, []);
   return (
     <div className="w-full relative">
       <Header/>
