@@ -69,7 +69,7 @@ useGSAP(() => {
       <div className={`w-full px-0 flex flex-col ${flex_dir} relative`}>
         
         {/* Left sticky column */}
-        <div className="w-full lg:w-1/2 h-[80vh] flex justify-center items-center lg:sticky top-0">
+        <div className="w-full lg:w-1/2 h-[40vh] lg:h-[80vh] flex justify-center items-center lg:sticky top-30">
           <h2 className="text-5xl lg:text-7xl font-semibold text-center">
             {service_name}
           </h2>
