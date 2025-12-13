@@ -7,11 +7,11 @@ import AboutHero from "../_components/(about)/AboutHero";
 export default function AboutUs() {
   useEffect(() => {
     heroTimeline.play();
-  },[])
+  },[]);
   return (
     <div className="w-full relative">
       <Header/>
-      <div className="p-4">
+      <div className="p-3">
       <AboutHero/>
       </div>
     </div>

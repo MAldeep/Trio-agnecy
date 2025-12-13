@@ -14,11 +14,11 @@ export default function AboutUsText() {
       letters,
       { filter: "brightness(50%)" },
       {
-        filter: "brightness(180%)",
+        filter: "brightness(220%)",
         stagger: {
           each: 0.1, // delay between letters
           repeat: -1, // infinite loop
-          yoyo: true, // brighten → dim → brighten
+          yoyo: true, 
         },
         duration: 0.6,
         ease: "power1.inOut",
