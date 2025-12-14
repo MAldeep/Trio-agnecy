@@ -20,7 +20,7 @@ const DigitalMarketing: React.FC = () => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: svg,
-        start: "top 85%",
+        start: "top 105%",
         scrub : true
       },
     });

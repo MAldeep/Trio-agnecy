@@ -8,8 +8,10 @@ import { useGSAP } from "@gsap/react";
 import { useState } from "react";
 import SideMenu from "./SideMenu";
 import { heroTimeline } from "./HeroTimeline";
+import { usePathname } from "next/navigation";
 const Header = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const pathname = usePathname();
   useGSAP(() => {
     // Basic Imports
     const introLogo = document.querySelector(".intro-logo") as HTMLElement;
@@ -130,19 +132,26 @@ const Header = () => {
           className="intro-logo"
         />
       </div>
-      <Link
-      className="logo"
-      href={"/"}
-      >
+      <Link className="logo" href={"/"}>
         <Image src={logo} height={100} width={120} alt=" Logo" />
       </Link>
       {/* NavLinks */}
       <div className="w-1/2 lg:flex justify-between items-center hidden links">
-        {NavLinks.map((el, idx) => (
-          <Link href={el.to} key={idx} className="text-shadow-gray-950 text-[18px] font-semibold">
-            {el.title}
-          </Link>
-        ))}
+        {NavLinks.map((el, idx) => {
+          const isActive = pathname === el.to || (pathname.startsWith(el.to) && el.to !== "/")
+          return (
+            <Link
+              href={el.to}
+              key={idx}
+              className={` text-[18px]  ${
+                isActive ? "font-bold text-amber-400 text-shadow-gray-950" :
+                "font-semibold text-black text-shadow-gray-950"
+              }`}
+            >
+              {el.title}
+            </Link>
+          );
+        })}
       </div>
       {/* Burger Menu */}
       <CiMenuFries
