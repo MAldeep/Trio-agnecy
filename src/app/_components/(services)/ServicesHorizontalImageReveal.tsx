@@ -69,7 +69,7 @@ export default function ServicesHorizontalImageReveal({
             duration: 0.9,
             ease: "power3.out",
           },
-          "-=0.6"
+          "-=0.4"
         );
     }, containerRef);
 

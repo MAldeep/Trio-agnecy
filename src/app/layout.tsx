@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 // Removed Geist font imports; using Inter via globals.css
 import "./globals.css";
+import Footer from "./_components/shared components/Footer";
 
 // Removed Geist font setup
 
@@ -18,6 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="antialiased">
         {children}
+        {<Footer/>}
       </body>
     </html>
   );
