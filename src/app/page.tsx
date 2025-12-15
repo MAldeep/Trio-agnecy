@@ -5,6 +5,7 @@ import { heroTimeline } from "./_components/(homePage)/HeroTimeline";
 import Header from "./_components/(homePage)/Header";
 import About from "./_components/(homePage)/About";
 import Services from "./_components/(homePage)/Services";
+import ProjectsSection from "./_components/(projects)/ProjectsSection";
 const Home = () => {
   useEffect(() => {
     heroTimeline.play();
@@ -15,6 +16,7 @@ const Home = () => {
       <Hero/>
       <About/>
       <Services/>
+      <ProjectsSection/>
     </div>
   );
 }

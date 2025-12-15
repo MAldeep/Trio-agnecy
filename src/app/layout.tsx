@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-// Removed Geist font imports; using Inter via globals.css
 import "./globals.css";
 import Footer from "./_components/shared components/Footer";
+import WhatsAppButton from "./_components/shared components/WhatsAppBtn";
 
-// Removed Geist font setup
 
 export const metadata: Metadata = {
   title: "Trio - Marketing Agency",
@@ -19,7 +18,8 @@ export default function RootLayout({
     <html lang="en">
       <body className="antialiased">
         {children}
-        {<Footer/>}
+        <Footer/>
+        <WhatsAppButton/>
       </body>
     </html>
   );
