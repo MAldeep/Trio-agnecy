@@ -1,8 +1,7 @@
 import Image, { StaticImageData } from "next/image";
 import { useRef, useEffect } from "react";
 import gsap from "gsap";
-import { useRouter } from "next/navigation";
-import Link from "next/link";
+import { Link, useRouter } from "../../../../i18n/routing";
 
 interface ProjectProps {
   id: number;

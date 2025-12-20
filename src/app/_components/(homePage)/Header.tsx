@@ -3,12 +3,13 @@ import Image from "next/image";
 import logo from "../../assets/images/trio-logo.png";
 import { CiMenuFries } from "react-icons/ci";
 import { NavLinks } from "./NavLinks";
-import Link from "next/link";
 import { useGSAP } from "@gsap/react";
 import { useState } from "react";
 import SideMenu from "./SideMenu";
 import { heroTimeline } from "./HeroTimeline";
 import { usePathname } from "next/navigation";
+import { Link } from "../../../../i18n/routing";
+import LanguageSwitcher from "./LanguageSwitcher";
 const Header = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const pathname = usePathname();
@@ -135,6 +136,7 @@ const Header = () => {
       <Link className="logo" href={"/"}>
         <Image src={logo} height={100} width={120} alt=" Logo" />
       </Link>
+      <LanguageSwitcher/>
       {/* NavLinks */}
       <div className="w-1/2 lg:flex justify-between items-center hidden links">
         {NavLinks.map((el, idx) => {
