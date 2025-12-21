@@ -33,7 +33,7 @@ const About = ({ locale }: { locale: string }) => {
       <div className="w-full p-5 lg:p-20 flex flex-col gap-10">
         <p
           className={clsx(
-            "text-3xl text-[#1E3B4E]",
+            "text-3xl lg:text-5xl text-[#1E3B4E]",
             isArabic ? aref.className : poppins.className
           )}
         >

@@ -10,5 +10,36 @@
   },
   "About": {
     "head": "About Trio"
+  },
+  "Services": {
+    "DigitalMarketing": {
+      "title": "Digital Marketing",
+      "SocialMediaMarketing": "Social Media Marketing",
+      "PlanningStrategies": "Planning Strategies",
+      "EmailMarketing": "Email Marketing"
+    },
+    "ContentCreation": "Content Creation",
+    "GraphicDesign": {
+      "title": "Graphic Design",
+      "BrandIdentityDevelopment": "Brand Identity Development",
+      "PrintDesign": "Print Design",
+      "SocialMediaDesign": "Social Media Design"
+    },
+    "SEO": "SEO Optimization",
+    "WebMobileAppsSubServices": {
+      "title": "Web & Mobile Apps",
+      "AppMaintenance": "App Maintenance",
+      "ECommerceSolutions": "E-Commerce Solutions",
+      "WebsiteDevelopment": "Website Development",
+      "UXUI": "UX/UI"
+    },
+    "MediaBuying": "Media Buying",
+    "MediaProductionSubServices": {
+      "title": "Media Production",
+      "VideoEditing": "Video Editing",
+      "AnimationMotionGraphics": "Animation Motion Graphics",
+      "CommercialsAndAdvertisements": "Commercials and Advertisements",
+      "EventCoverageLiveStreaming": "Event Coverage Live Streaming"
+    }
   }
 }

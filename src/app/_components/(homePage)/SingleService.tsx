@@ -12,62 +12,59 @@ interface SingleServiceProps {
 export default function SingleService({
   flex_dir,
   service_name,
-  ComponentOfsub
+  ComponentOfsub,
 }: SingleServiceProps) {
+  useGSAP(() => {
+    const sections = gsap.utils.toArray<HTMLElement>("#service .sub-section");
 
-useGSAP(() => {
-  const sections = gsap.utils.toArray<HTMLElement>("#service .sub-section");
+    const colors = ["#143C58", "#F0BA37", "#1E3B4E", "#000000"];
+    const textColors = ["#ffffff", "#ffffff", "#ffffff", "#ffffff"];
 
-  const colors = ["#fcdc9b", "#8AAA79", "#D1D5DE" , "#000000"];
-  const textColors = ["#000000", "#ffffff", "#ffffff" , "#ffffff"];
+    // cycle colors if needed
+    const bgColors = sections.map((_, i) => colors[i % colors.length]);
+    const txtColors = sections.map((_, i) => textColors[i % textColors.length]);
 
-  // cycle colors if needed
-  const bgColors = sections.map((_, i) => colors[i % colors.length]);
-  const txtColors = sections.map((_, i) => textColors[i % textColors.length]);
+    sections.forEach((section, i) => {
+      ScrollTrigger.create({
+        trigger: section,
+        start: "top center",
+        end: "bottom center",
+        scrub: true,
 
-  sections.forEach((section, i) => {
-    ScrollTrigger.create({
-      trigger: section,
-      start: "top center",       
-      end: "bottom center",      
-      scrub: true,
+        onEnter: () => {
+          gsap.to("#service", {
+            backgroundColor: bgColors[i],
+            duration: 1.2,
+            ease: "power2.inOut",
+          });
+          gsap.to("#service h2", {
+            color: txtColors[i],
+            duration: 1.2,
+            ease: "power2.inOut",
+          });
+        },
 
-      onEnter: () => {
-        gsap.to("#service", {
-          backgroundColor: bgColors[i],
-          duration: 1.2,
-          ease: "power2.inOut"
-        });
-        gsap.to("#service h2", {
-          color: txtColors[i],
-          duration: 1.2,
-          ease: "power2.inOut"
-        });
-      },
-
-      onEnterBack: () => {
-        gsap.to("#service", {
-          backgroundColor: bgColors[i],
-          duration: 1.2,
-          ease: "power2.inOut"
-        });
-        gsap.to("#service h2", {
-          color: txtColors[i],
-          duration: 1.2,
-          ease: "power2.inOut"
-        });
-      }
+        onEnterBack: () => {
+          gsap.to("#service", {
+            backgroundColor: bgColors[i],
+            duration: 1.2,
+            ease: "power2.inOut",
+          });
+          gsap.to("#service h2", {
+            color: txtColors[i],
+            duration: 1.2,
+            ease: "power2.inOut",
+          });
+        },
+      });
     });
-  });
 
-  ScrollTrigger.refresh();
-}, []);
-
+    ScrollTrigger.refresh();
+  }, []);
 
   return (
     <div className="w-full h-auto" id="service">
       <div className={`w-full px-0 flex flex-col ${flex_dir} relative`}>
-        
         {/* Left sticky column */}
         <div className="w-full lg:w-1/2 h-[40vh] lg:h-[80vh] flex justify-center items-center lg:sticky top-30">
           <h2 className="text-5xl lg:text-7xl font-semibold text-center">

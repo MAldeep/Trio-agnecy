@@ -1,3 +1,4 @@
+import { useTranslations } from "use-intl";
 import AnimationMotionGraphics from "./AnimationMotionGraphics";
 import CommercialsAndAdvertisements from "./CommercialsAndAdvertisements";
 import EventCoverageLiveStreaming from "./EventCoverageLiveStreaming";
@@ -5,32 +6,33 @@ import SubService from "./SubService";
 import VideoEditing from "./VideoEditing";
 
 export default function MediaProductionSubServices() {
+  const t = useTranslations("Services.MediaProductionSubServices");
   return (
     <div className="w-full lg:w-1/2">
       <SubService
-        subText="Social Media Marketing"
+        subText={t("VideoEditing")}
         Component={VideoEditing}
         id="sub-section"
         subTextColor="text-white"
       />
       <SubService
-        subText="Animation & Motion Graphics"
+        subText={t("AnimationMotionGraphics")}
         Component={AnimationMotionGraphics}
         id="sub-section"
         subTextColor="text-white"
       />
       <SubService
-        subText="Commercials & Advertisements"
+        subText={t("CommercialsAndAdvertisements")}
         Component={CommercialsAndAdvertisements}
         id="sub-section"
-        subTextColor="text-gray-900"
+        subTextColor="text-white"
       />
       <SubService
-        subText="Event Coverage & Live Streaming"
+        subText={t("EventCoverageLiveStreaming")}
         Component={EventCoverageLiveStreaming}
         id="sub-section"
         subTextColor="text-white"
       />
     </div>
-  )
+  );
 }

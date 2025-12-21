@@ -10,5 +10,36 @@
   },
   "About": {
     "head": "عن تريو"
+  },
+  "Services": {
+    "DigitalMarketing": {
+      "title": "التسويق الرقمي",
+      "SocialMediaMarketing": "تسويق وسائل التواصل الاجتماعي",
+      "PlanningStrategies": "خطط استراتيجية",
+      "EmailMarketing": "تسويق بريد إلكتروني"
+    },
+    "ContentCreation": "صناعة المحتوى",
+    "GraphicDesign": {
+      "title": "تصميم الجرافيك",
+      "BrandIdentityDevelopment": "تطوير الهوية البصرية",
+      "PrintDesign": "تصميم الطباعة",
+      "SocialMediaDesign": "تصميم وسائل التواصل الاجتماعي"
+    },
+    "SEO": "تحسين محركات البحث",
+    "WebMobileAppsSubServices": {
+      "title": "تطوير المواقع و التطبيقات",
+      "AppMaintenance": "صيانة التطبيقات",
+      "ECommerceSolutions": "حلول التجارة الإلكترونية",
+      "WebsiteDevelopment": "تطوير المواقع",
+      "UXUI": "تصميم واجهة المستخدم"
+    },
+    "MediaBuying": "الشراء الرقمي",
+    "MediaProductionSubServices": {
+      "title": "إنتاج الفيديو",
+      "VideoEditing": "تحرير الفيديو",
+      "AnimationMotionGraphics": "رسوم متحركة",
+      "CommercialsAndAdvertisements": "إعلانات و ترويجات",
+      "EventCoverageLiveStreaming": "التغطية الحية للمناسبات"
+    }
   }
 }

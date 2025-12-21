@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import ContentCreation from "./ContentCreation";
 import DigitalMarketingSubServices from "./DigitalMarketingSubServices";
 import GraphicDesignSubServices from "./GraphicDesignSubServices";
@@ -9,15 +10,16 @@ import SingleServiceWithoutSubs from "./SingleServiceWithoutSubs";
 import WebMobileAppsSubServices from "./WebMobileAppsSubServices";
 
 export default function Services() {
+  const t = useTranslations("Services");
   return (
     <div className="w-full">
       <SingleService
         flex_dir="lg:flex-row"
-        service_name="Digital Marketing"
+        service_name={t("DigitalMarketing.title")}
         ComponentOfsub={DigitalMarketingSubServices}
       />
       <SingleServiceWithoutSubs
-        ContentTitle="Content Creation"
+        ContentTitle={t("ContentCreation")}
         Component={ContentCreation}
         bgColor="bg-black"
         txtColor="text-white"
@@ -25,29 +27,29 @@ export default function Services() {
 
       <SingleService
         flex_dir="lg:flex-row-reverse"
-        service_name="Graphic Design"
+        service_name={t("GraphicDesign.title")}
         ComponentOfsub={GraphicDesignSubServices}
       />
       <SingleServiceWithoutSubs
-        ContentTitle="SEO Optimization"
+        ContentTitle={t("SEO")}
         Component={SEOOptimization}
-        bgColor="bg-[#D1D5DE]"
-        txtColor="text-white"
+        bgColor="bg-[#F0BA37]"
+        txtColor="text-black"
       />
       <SingleService
         flex_dir="lg:flex-row"
-        service_name="Web & Mobile Apps"
+        service_name={t("WebMobileAppsSubServices.title")}
         ComponentOfsub={WebMobileAppsSubServices}
       />
       <SingleServiceWithoutSubs
-        ContentTitle="Media Buying"
+        ContentTitle={t("MediaBuying")}
         Component={MediaBuying}
         bgColor="bg-black"
         txtColor="text-white"
       />
       <SingleService
         flex_dir="lg:flex-row-reverse"
-        service_name="Media Production"
+        service_name={t("MediaProductionSubServices.title")}
         ComponentOfsub={MediaProductionSubServices}
       />
     </div>
