@@ -6,6 +6,9 @@
     "fourth": "when you",
     "fifth": "are not in",
     "sixth": "the room",
-    "HeroBtn" : "Get in Touch"
+    "HeroBtn": "Get in Touch"
+  },
+  "About": {
+    "head": "About Trio"
   }
 }

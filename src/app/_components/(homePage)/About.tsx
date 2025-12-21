@@ -1,7 +1,12 @@
+import { aref, poppins } from "@/app/fonts";
 import { useGSAP } from "@gsap/react";
+import clsx from "clsx";
 import gsap, { SplitText, ScrollTrigger } from "gsap/all";
+import { useTranslations } from "next-intl";
 gsap.registerPlugin(SplitText, ScrollTrigger);
-const About = () => {
+const About = ({ locale }: { locale: string }) => {
+  const isArabic = locale === "ar";
+  const t = useTranslations("About");
   useGSAP(() => {
     const split = new SplitText("#text_about", { type: "words" });
     gsap.fromTo(
@@ -18,19 +23,23 @@ const About = () => {
           trigger: "#about_con",
           start: "top 60%",
           end: "top top",
-          scrub : true,
+          scrub: true,
         },
       }
     );
   }, []);
   return (
-    <div
-      className="w-full bg-[#fcdc9b] py-20"
-      id="about_con"
-    >
+    <div className="w-full bg-[#F0BA37] py-20" id="about_con">
       <div className="w-full p-5 lg:p-20 flex flex-col gap-10">
-        <p className="text-2xl text-gray-700">About Trio</p>
-        <h2 className="text-2xl lg:text-5xl" id="text_about">
+        <p
+          className={clsx(
+            "text-3xl text-[#1E3B4E]",
+            isArabic ? aref.className : poppins.className
+          )}
+        >
+          {t("head")}
+        </p>
+        <h2 className="text-2xl lg:text-5xl text-[#143C58]" id="text_about">
           Over the past three decades, Outten & Golden attorneys have zealously
           advanced the rights of employees from all walks of life. Through
           counseling, negotiation, and litigation, we stand as a guiding light
