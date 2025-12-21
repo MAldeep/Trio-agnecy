@@ -25,7 +25,7 @@ export default function SingleServiceWithoutSubs({
           "#content_text",
           {
             opacity: 0.1,
-            x: -30,
+            x: 10,
           },
           {
             opacity: 1,
@@ -40,7 +40,7 @@ export default function SingleServiceWithoutSubs({
           "#content_text",
           {
             opacity: 0.1,
-            x: -30,
+            x: 10,
           },
           {
             opacity: 1,
