@@ -10,7 +10,7 @@ import { heroTimeline } from "./HeroTimeline";
 import { usePathname } from "next/navigation";
 import { Link } from "../../../../i18n/routing";
 import LanguageSwitcher from "./LanguageSwitcher";
-import { poppins, tajawal } from "@/app/fonts";
+import { cairo, inter } from "@/app/fonts";
 import { useLocale } from "next-intl";
 import clsx from "clsx";
 const Header = () => {
@@ -157,7 +157,7 @@ const Header = () => {
                   "font-bold text-amber-400": isActive,
                   "font-semibold text-black": !isActive,
                 },
-                isArabic ? tajawal.className : poppins.className
+                isArabic ? cairo.className : inter.className
               )}
             >
               {isArabic ? el.titleAr : el.titleEn}
