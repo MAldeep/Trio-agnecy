@@ -5,12 +5,16 @@ import { NavLinks } from "./NavLinks";
 import Link from "next/link";
 import gsap from "gsap/all";
 import { useEffect } from "react";
+import { useParams } from "next/navigation";
 
 type OpenProps = {
   isOpen: boolean;
   setIsOpen: (value: boolean) => void;
 };
 const SideMenu = ({ isOpen, setIsOpen }: OpenProps) => {
+  const params = useParams();
+  const locale = params.locale as string;
+
   useEffect(() => {
     if (isOpen) {
       gsap.fromTo(
@@ -43,7 +47,7 @@ const SideMenu = ({ isOpen, setIsOpen }: OpenProps) => {
       />
       <div className="w-full px-5 flex flex-col justify-center items-center gap-7">
         {NavLinks.map((el, idx) => (
-          <Link key={idx} href={el.to} className="text-2xl text-white link">
+          <Link key={idx} href={`/${locale}/${el.to}`} className="text-2xl text-white link">
             {el.title}
           </Link>
         ))}
