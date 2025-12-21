@@ -11,11 +11,10 @@ import { usePathname } from "next/navigation";
 import { Link } from "../../../../i18n/routing";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { cairo, inter } from "@/app/fonts";
-import { useLocale } from "next-intl";
+import { useIsArabic } from "../shared components/useIsArabic";
 import clsx from "clsx";
 const Header = () => {
-  const locale = useLocale();
-  const isArabic = locale === "ar";
+  const { isArabic, locale } = useIsArabic();
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const pathname = usePathname();
   useGSAP(() => {
@@ -141,12 +140,14 @@ const Header = () => {
       <Link className="logo" href={"/"}>
         <Image src={logo} height={100} width={120} alt=" Logo" />
       </Link>
-      <LanguageSwitcher/>
+      <LanguageSwitcher />
       {/* NavLinks */}
       <div className="w-1/2 lg:flex justify-between items-center hidden links">
         {NavLinks.map((el, idx) => {
           const pathWithoutLocale = pathname.replace(`/${locale}`, "") || "/";
-          const isActive = pathWithoutLocale === el.to || (pathWithoutLocale.startsWith(el.to) && el.to !== "/")
+          const isActive =
+            pathWithoutLocale === el.to ||
+            (pathWithoutLocale.startsWith(el.to) && el.to !== "/");
           return (
             <Link
               href={el.to}

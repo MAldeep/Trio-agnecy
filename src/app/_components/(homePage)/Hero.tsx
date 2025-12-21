@@ -6,11 +6,15 @@ import gsap, { ScrollTrigger } from "gsap/all";
 import HeroImage from "./HeroImage";
 import { useMediaQuery } from "react-responsive";
 import { useTranslations } from "next-intl";
+import clsx from "clsx";
+import { aref, poppins } from "@/app/fonts";
+import { useIsArabic } from "../shared components/useIsArabic";
 gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
-  const isMobile =  useMediaQuery({ query: '(max-width: 768px)' });
+  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
   const anStart = isMobile ? "top top+=300" : "top top+=500";
+  const isArabic = useIsArabic();
   const t = useTranslations("Hero");
   useGSAP(() => {
     // starter animation
@@ -81,7 +85,12 @@ const Hero = () => {
         className=" flex flex-col gap-7 text-center items-center"
         id="hero_text"
       >
-        <h1 className="text-3xl lg:text-7xl text-[#143C58] font-semibold text-center leading-snug">
+        <h1
+          className={clsx(
+            "text-3xl lg:text-7xl text-[#143C58] font-semibold text-center leading-snug",
+            isArabic ? aref.className : poppins.className
+          )}
+        >
           <span className="word-up inline-block mr-4 ">{t("first")}</span>
           <span className="word-up inline-block mr-4">{t("second")}</span>
           <span className="word-down inline-block mr-4">{t("third")}</span>
@@ -100,7 +109,12 @@ const Hero = () => {
       <div
         className="w-full flex justify-center"
         id="hero_image"
-        style={{ height: "60vh", width: "60vw" , borderRadius : "32px", overflow : "hidden"}}
+        style={{
+          height: "60vh",
+          width: "60vw",
+          borderRadius: "32px",
+          overflow: "hidden",
+        }}
       >
         <HeroImage />
       </div>
