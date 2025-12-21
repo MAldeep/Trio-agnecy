@@ -25,11 +25,9 @@ export default function SingleServiceWithoutSubs({
           "#content_text",
           {
             opacity: 0.1,
-            x: 10,
           },
           {
             opacity: 1,
-            x: 0,
             duration: 0.5,
             ease: "power2.inOut",
           }
@@ -40,11 +38,9 @@ export default function SingleServiceWithoutSubs({
           "#content_text",
           {
             opacity: 0.1,
-            x: 10,
           },
           {
             opacity: 1,
-            x: 0,
             duration: 0.5,
             ease: "power2.inOut",
           }
