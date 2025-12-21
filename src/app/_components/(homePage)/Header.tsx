@@ -7,12 +7,14 @@ import { useGSAP } from "@gsap/react";
 import { useState } from "react";
 import SideMenu from "./SideMenu";
 import { heroTimeline } from "./HeroTimeline";
-import { useParams, usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { Link } from "../../../../i18n/routing";
 import LanguageSwitcher from "./LanguageSwitcher";
+import { poppins, tajawal } from "@/app/fonts";
+import { useLocale } from "next-intl";
+import clsx from "clsx";
 const Header = () => {
-  const params = useParams();
-  const locale = params.locale as string;
+  const locale = useLocale();
   const isArabic = locale === "ar";
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const pathname = usePathname();
@@ -149,10 +151,14 @@ const Header = () => {
             <Link
               href={el.to}
               key={idx}
-              className={` text-[18px]  ${
-                isActive ? "font-bold text-amber-400 text-shadow-gray-950" :
-                "font-semibold text-black text-shadow-gray-950"
-              }`}
+              className={clsx(
+                "text-[18px]",
+                {
+                  "font-bold text-amber-400": isActive,
+                  "font-semibold text-black": !isActive,
+                },
+                isArabic ? tajawal.className : poppins.className
+              )}
             >
               {isArabic ? el.titleAr : el.titleEn}
             </Link>
