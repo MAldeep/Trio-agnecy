@@ -97,7 +97,7 @@ export default function LanguageSwitcher() {
         {/* Text Container */}
         <div ref={textRef} className="relative z-10 flex items-center gap-2">
           <span className="group-hover:text-[#F0BA37] transition-colors duration-300">
-            {locale === "en" ? "ar" : "ar"}
+            {locale === "en" ? "ar" : "en"}
           </span>
           
           {/* Decorative Dot */}
