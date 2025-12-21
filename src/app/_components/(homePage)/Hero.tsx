@@ -5,11 +5,13 @@ import Link from "next/link";
 import gsap, { ScrollTrigger } from "gsap/all";
 import HeroImage from "./HeroImage";
 import { useMediaQuery } from "react-responsive";
+import { useTranslations } from "next-intl";
 gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
   const isMobile =  useMediaQuery({ query: '(max-width: 768px)' });
   const anStart = isMobile ? "top top+=300" : "top top+=500";
+  const t = useTranslations("Hero");
   useGSAP(() => {
     // starter animation
     heroTimeline
@@ -37,7 +39,7 @@ const Hero = () => {
       .to("#hero_text", {
         opacity: 0.4,
         position: "sticky",
-        top: "30vh",
+        top: "20vh",
         duration: 1,
         scrollTrigger: {
           trigger: "#hero_image",
@@ -74,25 +76,25 @@ const Hero = () => {
       });
   });
   return (
-    <div className=" w-full bg-gray-50 h-[300vh] flex flex-col justify-start items-center gap-5 z-30 pt-20 lg:pt-50">
+    <div className=" w-full bg-[#F4FCFD] h-[300vh] flex flex-col justify-start items-center gap-5 z-30 pt-20 lg:pt-50">
       <div
         className=" flex flex-col gap-7 text-center items-center"
         id="hero_text"
       >
-        <h1 className="text-3xl lg:text-7xl text-gray-900 font-semibold text-center leading-snug">
-          <span className="word-up inline-block mr-4 ">Triple</span>
-          <span className="word-up inline-block mr-4">The</span>
-          <span className="word-down inline-block mr-4">Ideas</span>
+        <h1 className="text-3xl lg:text-7xl text-[#143C58] font-semibold text-center leading-snug">
+          <span className="word-up inline-block mr-4 ">{t("first")}</span>
+          <span className="word-up inline-block mr-4">{t("second")}</span>
+          <span className="word-down inline-block mr-4">{t("third")}</span>
           <br />
-          <span className="word-up inline-block mr-4">Triple</span>
-          <span className="word-down inline-block mr-4">The</span>
-          <span className="word-down inline-block mr-4">Impact</span>
+          <span className="word-up inline-block mr-4">{t("fourth")}</span>
+          <span className="word-down inline-block mr-4">{t("fifth")}</span>
+          <span className="word-down inline-block mr-4">{t("sixth")}</span>
         </h1>
         <Link
           href={"/contact"}
-          className="bg-gray-950 w-fit text-gray-100 px-6 py-3 rounded-md font-medium hover:bg-gray-800 transition contact-button leading-snug"
+          className="bg-[#1E3B4E] w-fit text-gray-100 px-6 py-3 rounded-md font-medium hover:bg-[#143C58] transition contact-button leading-snug"
         >
-          Get in Touch
+          {t("HeroBtn")}
         </Link>
       </div>
       <div
