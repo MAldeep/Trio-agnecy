@@ -143,7 +143,8 @@ const Header = () => {
       {/* NavLinks */}
       <div className="w-1/2 lg:flex justify-between items-center hidden links">
         {NavLinks.map((el, idx) => {
-          const isActive = pathname === el.to || (pathname.startsWith(el.to) && el.to !== "/")
+          const pathWithoutLocale = pathname.replace(`/${locale}`, "") || "/";
+          const isActive = pathWithoutLocale === el.to || (pathWithoutLocale.startsWith(el.to) && el.to !== "/")
           return (
             <Link
               href={el.to}
