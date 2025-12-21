@@ -1,19 +1,27 @@
+import clsx from "clsx";
 import ProjectsContent from "./ProjectsContent";
 import Link from "next/link";
+import { aref, poppins } from "@/app/fonts";
 
-export default function ProjectsSection() {
+export default function ProjectsSection({ locale }: { locale: string }) {
+  const isArabic = locale === "ar";
   return (
-    <div className="w-full min-h-screenflex flex-col bg-gray-200 py-2.5 lg:py-9">
-      <h2 className="text-center text-5xl lg:text-7xl font-semibold">
-        Our Projects
+    <div className="w-full min-h-screenflex flex-col bg-[#F4FCFD] py-2.5 lg:py-9">
+      <h2
+        className={clsx(
+          "text-center text-5xl lg:text-7xl font-semibold text-[#143C58]",
+          isArabic ? aref.className : poppins.className
+        )}
+      >
+        {isArabic ? "مشاريعنا" : "Our Projects"}
       </h2>
       <ProjectsContent />
       <div className="w-full flex px-2.5">
         <Link
-          className="w-full py-2.5 rounded-md bg-gray-950 hover:bg-gray-600 transition-all duration-150 text-center text-white"
+          className="w-full py-2.5 rounded-md bg-[#1E3B4E] hover:bg-[#143C58] transition-all duration-150 text-center text-white"
           href="/projects"
         >
-          See All Projects
+          {isArabic ? "المشاريع الكاملة" : "See All Projects"}
         </Link>
       </div>
     </div>

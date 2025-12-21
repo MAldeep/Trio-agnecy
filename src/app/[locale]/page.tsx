@@ -19,7 +19,7 @@ const Home = () => {
       <Hero />
       <About locale={locale} />
       <Services />
-      <ProjectsSection />
+      <ProjectsSection locale={locale} />
     </div>
   );
 };
