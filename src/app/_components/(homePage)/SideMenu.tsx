@@ -48,7 +48,7 @@ const SideMenu = ({ isOpen, setIsOpen }: OpenProps) => {
       <div className="w-full px-5 flex flex-col justify-center items-center gap-7">
         {NavLinks.map((el, idx) => (
           <Link key={idx} href={`/${locale}/${el.to}`} className="text-2xl text-white link">
-            {el.title}
+            {locale === "ar" ? el.titleAr : el.titleEn}
           </Link>
         ))}
       </div>

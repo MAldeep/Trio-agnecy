@@ -7,10 +7,13 @@ import { useGSAP } from "@gsap/react";
 import { useState } from "react";
 import SideMenu from "./SideMenu";
 import { heroTimeline } from "./HeroTimeline";
-import { usePathname } from "next/navigation";
+import { useParams, usePathname } from "next/navigation";
 import { Link } from "../../../../i18n/routing";
 import LanguageSwitcher from "./LanguageSwitcher";
 const Header = () => {
+  const params = useParams();
+  const locale = params.locale as string;
+  const isArabic = locale === "ar";
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const pathname = usePathname();
   useGSAP(() => {
@@ -150,7 +153,7 @@ const Header = () => {
                 "font-semibold text-black text-shadow-gray-950"
               }`}
             >
-              {el.title}
+              {isArabic ? el.titleAr : el.titleEn}
             </Link>
           );
         })}

@@ -1,27 +1,36 @@
-export const NavLinks: { title: string; to: string }[] = [
+export const NavLinks: { 
+  titleAr: string;
+  titleEn: string;
+  to: string;
+  }[] = [
   {
-    title: "Home",
+    titleAr : "الرئيسية",
+    titleEn: "Home",
     to: "/",
   },
   {
-    title: "About Us",
+    titleAr: "من نحن",
+    titleEn: "About Us",
     to: "/about",
   },
   {
-    title: "Services",
+    titleAr: "الخدمات",
+    titleEn: "Services",
     to: "/services",
   },
   {
-    title: "Projects",
+    titleAr: "المشاريع",
+    titleEn: "Projects",
     to: "/projects",
   },
   {
-    title: "Blog",
+    titleAr: "المدونة",
+    titleEn: "Blog",
     to: "/blog",
   },
   {
-    title: "Contact Us",
+    titleAr: "تواصل معنا",
+    titleEn: "Contact Us",
     to: "/contact",
   },
 ];
-
