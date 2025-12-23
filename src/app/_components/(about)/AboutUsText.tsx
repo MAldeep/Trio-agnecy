@@ -1,41 +1,46 @@
 "use client";
 import gsap from "gsap/all";
+import { useTranslations } from "next-intl";
 import { useEffect, useRef } from "react";
 
 export default function AboutUsText() {
+  const t = useTranslations("About");
+  const text: string = t("about");
   const h1Ref = useRef<HTMLHeadingElement | null>(null);
   useEffect(() => {
     if (!h1Ref.current) return;
 
-    const letters: NodeListOf<HTMLSpanElement> =
-      h1Ref.current.querySelectorAll("#char");
+    const words: NodeListOf<HTMLSpanElement> =
+      h1Ref.current.querySelectorAll(".animated-word");
 
     gsap.fromTo(
-      letters,
+      words,
       { filter: "brightness(50%)" },
       {
         filter: "brightness(220%)",
         stagger: {
-          each: 0.1, // delay between letters
+          each: 0.3, // delay between words
           repeat: -1, // infinite loop
-          yoyo: true, 
+          yoyo: true,
         },
-        duration: 0.6,
+        duration: 0.8,
         ease: "power1.inOut",
       }
     );
   }, []);
-  const text = "About Us".split("").map((char, i) => (
-    <span key={i} className="inline-block" id="char">
-      {char}
+
+  // Split by words (spaces) instead of characters to preserve Arabic letter connections
+  const textElements = text.split(" ").map((word, i) => (
+    <span key={i} className="inline-block animated-word mx-2">
+      {word}
     </span>
   ));
   return (
     <h1
       ref={h1Ref}
-      className="text-5xl lg:text-8xl text-gray-800 font-semibold"
+      className="text-5xl lg:text-8xl text-[#1E3B4E] font-semibold"
     >
-      {text}
+      {textElements}
     </h1>
   );
 }

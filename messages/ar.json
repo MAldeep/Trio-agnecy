@@ -9,7 +9,9 @@
     "HeroBtn": "تواصل معنا"
   },
   "About": {
-    "head": "عن تريو"
+    "head": "عن تريو",
+    "story": "قصة تريو",
+    "about": "عن تريو"
   },
   "Services": {
     "DigitalMarketing": {

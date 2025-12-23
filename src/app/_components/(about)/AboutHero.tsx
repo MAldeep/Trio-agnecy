@@ -1,8 +1,10 @@
 import { useGSAP } from "@gsap/react";
 import AboutUsText from "./AboutUsText";
 import { heroTimeline } from "../(homePage)/HeroTimeline";
+import { useTranslations } from "next-intl";
 
 export default function AboutHero() {
+  const t = useTranslations("About");
   useGSAP(() => {
     // starter animation
     heroTimeline.fromTo(
@@ -21,11 +23,12 @@ export default function AboutHero() {
   });
   return (
     <div
-      className="w-full h-screen bg-gray-100 flex flex-col justify-center items-center rounded-2xl shadow-2xl"
+      className="w-full h-screen bg-[#F4FCFD] flex flex-col justify-center items-center rounded-2xl shadow-2xl"
       id="about_hero"
     >
-      <span className="text-md text-gray-400">Trio&apos;s Story</span>
+      <span className="text-md text-gray-400">{t("story")}</span>
       <AboutUsText />
+      {/* here the about text will be added */}
     </div>
   );
 }

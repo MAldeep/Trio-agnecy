@@ -9,7 +9,9 @@
     "HeroBtn": "Get in Touch"
   },
   "About": {
-    "head": "About Trio"
+    "head": "About Trio",
+    "story": "Trio's Story",
+    "about": "About Trio"
   },
   "Services": {
     "DigitalMarketing": {
