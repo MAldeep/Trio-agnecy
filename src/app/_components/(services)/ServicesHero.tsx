@@ -9,8 +9,12 @@ import SEOOptimization from "../(homePage)/SEOOptimization";
 import MediaBuying from "../(homePage)/MediaBuying";
 import MediaProduction from "./MediaProduction";
 import { useTranslations } from "next-intl";
+import { useIsArabic } from "../shared components/useIsArabic";
+import clsx from "clsx";
+import { aref, poppins } from "@/app/fonts";
 // note : service brief will be added when data flow
 export default function ServicesHero() {
+  const isArabic = useIsArabic();
   const t = useTranslations("Services");
   useGSAP(() => {
     heroTimeline.fromTo(
@@ -47,7 +51,13 @@ export default function ServicesHero() {
         <span className="text-sm text-gray-400" id="service_span">
           {t("TrioServices")}
         </span>
-        <h1 className="text-5xl lg:text-8xl font-semibold" id="service_title">
+        <h1
+          className={clsx(
+            "text-5xl lg:text-8xl font-semibold",
+            isArabic ? aref.className : poppins.className
+          )}
+          id="service_title"
+        >
           {t("title")}
         </h1>
       </div>

@@ -2,9 +2,13 @@
 import gsap from "gsap/all";
 import { useTranslations } from "next-intl";
 import { useEffect, useRef } from "react";
+import { useIsArabic } from "../shared components/useIsArabic";
+import clsx from "clsx";
+import { aref, poppins } from "@/app/fonts";
 
 export default function AboutUsText() {
   const t = useTranslations("About");
+  const isArabic = useIsArabic();
   const text: string = t("about");
   const h1Ref = useRef<HTMLHeadingElement | null>(null);
   useEffect(() => {
@@ -38,7 +42,10 @@ export default function AboutUsText() {
   return (
     <h1
       ref={h1Ref}
-      className="text-5xl lg:text-8xl text-[#1E3B4E] font-semibold"
+      className={clsx(
+        "text-5xl lg:text-8xl text-[#1E3B4E] font-semibold",
+        isArabic ? aref.className : poppins.className
+      )}
     >
       {textElements}
     </h1>
