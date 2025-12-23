@@ -8,9 +8,10 @@ import ContentCreation from "../(homePage)/ContentCreation";
 import SEOOptimization from "../(homePage)/SEOOptimization";
 import MediaBuying from "../(homePage)/MediaBuying";
 import MediaProduction from "./MediaProduction";
-
-
+import { useTranslations } from "next-intl";
+// note : service brief will be added when data flow
 export default function ServicesHero() {
+  const t = useTranslations("Services");
   useGSAP(() => {
     heroTimeline.fromTo(
       "#service_span",
@@ -40,74 +41,74 @@ export default function ServicesHero() {
     );
   }, []);
   return (
-    <div className="w-full min-h-screen bg-gray-100 flex justify-center items-center flex-col py-10 gap-44">
+    <div className="w-full min-h-screen bg-[#F4FCFD] flex justify-center items-center flex-col py-10 gap-44">
+      {/* the hero section */}
       <div className="w-full flex flex-col gap-5 justify-center items-center">
         <span className="text-sm text-gray-400" id="service_span">
-          Trio&apos;s Services
+          {t("TrioServices")}
         </span>
         <h1 className="text-5xl lg:text-8xl font-semibold" id="service_title">
-          Services
+          {t("title")}
         </h1>
-        
       </div>
       <div className="w-full">
-          <ServicesHorizontalImageReveal
-            Component={DigitalMarketing}
-            serviceName="Digital Marketing"
-            serviceBrief="Digital Marketing Brief"
-            bgColor="bg-gray-200"
-            txtColor="text-white"
-          />
-          <ServicesHorizontalImageReveal
-            Component={GraphicDesign}
-            serviceName="Graphic Design"
-            serviceBrief="Graphic Design Brief"
-            bgColor="bg-gray-400"
-            txtColor="text-white"
-          />
-          <ServicesHorizontalImageReveal
-            Component={WebMobileApps}
-            serviceName="Web & Mobile Apps"
-            serviceBrief="Web & Mobile Apps Brief"
-            bgColor="bg-gray-200"
-            txtColor="text-white"
-          />
-          <ServicesHorizontalImageReveal
-            Component={ContentCreation}
-            serviceName="Content Creation"
-            serviceBrief="Content Creation Brief"
-            bgColor="bg-gray-400"
-            txtColor="text-white"
-          />
-          <ServicesHorizontalImageReveal
-            Component={SEOOptimization}
-            serviceName="SEO"
-            serviceBrief="SEO Brief"
-            bgColor="bg-gray-200"
-            txtColor="text-white"
-          />
-          <ServicesHorizontalImageReveal
-            Component={MediaBuying}
-            serviceName="Media Buying"
-            serviceBrief="Media Buying Brief"
-            bgColor="bg-gray-400"
-            txtColor="text-white"
-          />
-          <ServicesHorizontalImageReveal
-            Component={MediaBuying}
-            serviceName="Media Buying"
-            serviceBrief="Media Buying Brief"
-            bgColor="bg-gray-200"
-            txtColor="text-white"
-          />
-          <ServicesHorizontalImageReveal
-            Component={MediaProduction}
-            serviceName="Media Production"
-            serviceBrief="Media Production Brief"
-            bgColor="bg-gray-400"
-            txtColor="text-white"
-          />
-        </div>
+        <ServicesHorizontalImageReveal
+          Component={DigitalMarketing}
+          serviceName={t("DigitalMarketing.title")}
+          serviceBrief="Digital Marketing Brief"
+          bgColor="bg-[#143C58]"
+          txtColor="text-white"
+        />
+        <ServicesHorizontalImageReveal
+          Component={GraphicDesign}
+          serviceName={t("GraphicDesign.title")}
+          serviceBrief="Graphic Design Brief"
+          bgColor="bg-[#F0BA37]"
+          txtColor="text-white"
+        />
+        <ServicesHorizontalImageReveal
+          Component={WebMobileApps}
+          serviceName={t("WebMobileAppsSubServices.title")}
+          serviceBrief="Web & Mobile Apps Brief"
+          bgColor="bg-[#1E3B4E]"
+          txtColor="text-white"
+        />
+        <ServicesHorizontalImageReveal
+          Component={ContentCreation}
+          serviceName={t("ContentCreation")}
+          serviceBrief="Content Creation Brief"
+          bgColor="bg-[#000000]"
+          txtColor="text-white"
+        />
+        <ServicesHorizontalImageReveal
+          Component={SEOOptimization}
+          serviceName={t("SEO")}
+          serviceBrief="SEO Brief"
+          bgColor="bg-[#143C58]"
+          txtColor="text-white"
+        />
+        <ServicesHorizontalImageReveal
+          Component={MediaBuying}
+          serviceName={t("MediaBuying")}
+          serviceBrief="Media Buying Brief"
+          bgColor="bg-[#F0BA37]"
+          txtColor="text-white"
+        />
+        {/* <ServicesHorizontalImageReveal
+          Component={MediaBuying}
+          serviceName={t("MediaProductionSubServices.title")}
+          serviceBrief="Media Buying Brief"
+          bgColor="bg-[#1E3B4E]"
+          txtColor="text-white"
+        /> */}
+        <ServicesHorizontalImageReveal
+          Component={MediaProduction}
+          serviceName={t("MediaProductionSubServices.title")}
+          serviceBrief="Media Production Brief"
+          bgColor="bg-[#000000]"
+          txtColor="text-white"
+        />
+      </div>
     </div>
   );
 }

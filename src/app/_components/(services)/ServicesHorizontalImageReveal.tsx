@@ -9,8 +9,8 @@ interface ServiceHorizontalProps {
   Component: React.ComponentType;
   serviceName: string;
   serviceBrief: string;
-  bgColor : string;
-  txtColor : string;
+  bgColor: string;
+  txtColor: string;
 }
 
 export default function ServicesHorizontalImageReveal({
@@ -18,7 +18,7 @@ export default function ServicesHorizontalImageReveal({
   serviceName,
   serviceBrief,
   bgColor,
-  txtColor
+  txtColor,
 }: ServiceHorizontalProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const titleRef = useRef<HTMLHeadingElement | null>(null);
@@ -31,22 +31,22 @@ export default function ServicesHorizontalImageReveal({
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top 75%",
-          once : true
+          once: true,
         },
       });
 
-      // Split text into spans for subtle stagger
-      const letters = titleRef.current!.querySelectorAll("span");
+      // Split text into spans for subtle stagger (by words)
+      const words = titleRef.current!.querySelectorAll("span");
 
       tl.fromTo(
-        letters,
+        words,
         { y: 80, opacity: 0 },
         {
           y: 0,
           opacity: 1,
           duration: 0.8,
           ease: "power4.out",
-          stagger: 0.04,
+          stagger: 0.08,
         }
       )
         .fromTo(
@@ -88,9 +88,9 @@ export default function ServicesHorizontalImageReveal({
             ref={titleRef}
             className="text-4xl lg:text-7xl font-bold leading-tight tracking-tight text-start"
           >
-            {serviceName.split("").map((char, i) => (
-              <span key={i} className={`inline-block ${txtColor}`}>
-                {char === " " ? "\u00A0" : char}
+            {serviceName.split(" ").map((word, i) => (
+              <span key={i} className={`inline-block ${txtColor} mr-2`}>
+                {word}
               </span>
             ))}
           </h1>
