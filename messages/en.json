@@ -45,5 +45,8 @@
     },
     "TrioServices": "Trio's Services",
     "title": "Services"
+  },
+  "Projects": {
+    "head": "Our Projects"
   }
 }
