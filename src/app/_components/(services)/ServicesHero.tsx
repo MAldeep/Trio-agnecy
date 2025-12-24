@@ -14,7 +14,7 @@ import clsx from "clsx";
 import { aref, poppins } from "@/app/fonts";
 // note : service brief will be added when data flow
 export default function ServicesHero() {
-  const isArabic = useIsArabic();
+  const { isArabic } = useIsArabic();
   const t = useTranslations("Services");
   useGSAP(() => {
     heroTimeline.fromTo(

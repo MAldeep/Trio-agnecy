@@ -5,7 +5,10 @@ import "../globals.css";
 import Footer from "../_components/shared components/Footer";
 import WhatsAppButton from "../_components/shared components/WhatsAppBtn";
 import { cairo, inter } from "../fonts";
-
+export const metadata = {
+  title: "Trio Agency",
+  description: "Trio Agency",
+};
 export default async function LocaleLayout({
   children,
   params,

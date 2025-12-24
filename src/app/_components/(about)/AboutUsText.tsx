@@ -8,7 +8,7 @@ import { aref, poppins } from "@/app/fonts";
 
 export default function AboutUsText() {
   const t = useTranslations("About");
-  const isArabic = useIsArabic();
+  const { isArabic } = useIsArabic();
   const text: string = t("about");
   const h1Ref = useRef<HTMLHeadingElement | null>(null);
   useEffect(() => {

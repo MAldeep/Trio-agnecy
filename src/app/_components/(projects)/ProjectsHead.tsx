@@ -10,7 +10,7 @@ import clsx from "clsx";
 import { aref, poppins } from "@/app/fonts";
 
 export default function ProjectsHead() {
-  const isArabic = useIsArabic();
+  const { isArabic } = useIsArabic();
   const t = useTranslations("Projects");
   const titleRef = useRef<HTMLHeadingElement | null>(null);
   useGSAP(() => {
