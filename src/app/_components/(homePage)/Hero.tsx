@@ -14,7 +14,7 @@ gsap.registerPlugin(ScrollTrigger);
 const Hero = () => {
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
   const anStart = isMobile ? "top top+=300" : "top top+=500";
-  const isArabic = useIsArabic();
+  const { isArabic } = useIsArabic();
   const t = useTranslations("Hero");
   useGSAP(() => {
     // starter animation

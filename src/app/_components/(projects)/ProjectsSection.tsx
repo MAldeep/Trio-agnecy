@@ -2,9 +2,10 @@ import clsx from "clsx";
 import ProjectsContent from "./ProjectsContent";
 import Link from "next/link";
 import { aref, poppins } from "@/app/fonts";
+import { useIsArabic } from "../shared components/useIsArabic";
 
-export default function ProjectsSection({ locale }: { locale: string }) {
-  const isArabic = locale === "ar";
+export default function ProjectsSection() {
+  const { isArabic } = useIsArabic();
   return (
     <div className="w-full min-h-screenflex flex-col bg-[#F4FCFD] py-2.5 lg:py-9">
       <h2
