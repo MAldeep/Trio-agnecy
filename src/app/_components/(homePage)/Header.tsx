@@ -127,7 +127,7 @@ const Header = () => {
   });
 
   return (
-    // i removed sticky position from header as a test it was sticky left-0 top-0
+    // i removed sticky position from header as a test "it was sticky left-0 top-0"
     <header className="w-full  flex justify-between items-center px-3 lg:px-11 z-50 bg-[#F4FCFD] border-b-2 border-b-gray-200">
       <div className="intro-overlay fixed inset-0 bg-[#F4FCFD] flex items-center justify-center z-9999 ">
         <Image

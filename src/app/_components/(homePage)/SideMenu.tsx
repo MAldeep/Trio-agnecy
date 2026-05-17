@@ -20,8 +20,8 @@ const SideMenu = ({ isOpen, setIsOpen }: OpenProps) => {
       gsap.fromTo(
         ".link",
         {
-          y: -100,
-          x: 100,
+          y: -20,
+          x: 10,
           opacity: 0,
         },
         {
@@ -30,8 +30,8 @@ const SideMenu = ({ isOpen, setIsOpen }: OpenProps) => {
           opacity: 1,
           ease: "power1.in",
           duration: 1,
-          stagger : 0.3
-        }
+          stagger: 0.3,
+        },
       );
     }
   }, [isOpen]);
@@ -47,7 +47,11 @@ const SideMenu = ({ isOpen, setIsOpen }: OpenProps) => {
       />
       <div className="w-full px-5 flex flex-col justify-center items-center gap-7">
         {NavLinks.map((el, idx) => (
-          <Link key={idx} href={`/${locale}/${el.to}`} className="text-2xl text-white link">
+          <Link
+            key={idx}
+            href={`/${locale}/${el.to}`}
+            className="text-2xl text-white link"
+          >
             {locale === "ar" ? el.titleAr : el.titleEn}
           </Link>
         ))}
