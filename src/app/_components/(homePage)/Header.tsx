@@ -124,7 +124,7 @@ const Header = () => {
       },
       "-=0.6",
     );
-  });
+  }, []);
 
   return (
     // i removed sticky position from header as a test "it was sticky left-0 top-0"

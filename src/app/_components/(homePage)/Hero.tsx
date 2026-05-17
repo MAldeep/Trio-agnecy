@@ -82,7 +82,7 @@ const Hero = () => {
   return (
     <div className=" w-full bg-[#F4FCFD] h-[300vh] flex flex-col justify-start items-center gap-5 z-30 pt-20 lg:pt-50">
       <div
-        className=" flex flex-col gap-7 text-center items-center"
+        className=" flex flex-col gap-7 text-center items-center px-0 lg:px-40"
         id="hero_text"
       >
         <h1
