@@ -42,7 +42,7 @@ const Header = () => {
     heroTimeline.fromTo(
       overlay,
       { opacity: 0 },
-      { opacity: 1, duration: 1, ease: "power2.out" }
+      { opacity: 1, duration: 1, ease: "power2.out" },
     );
 
     // Center + cinematic intro
@@ -65,7 +65,7 @@ const Header = () => {
         filter: "brightness(1.1) blur(0px)",
         duration: 1.5,
         ease: "power4.out",
-      }
+      },
     );
 
     // Slight camera push before moving
@@ -94,7 +94,7 @@ const Header = () => {
         ease: "power2.inOut",
         onComplete: () => overlay.remove(),
       },
-      "-=1"
+      "-=1",
     );
 
     // Animate nav links
@@ -108,7 +108,7 @@ const Header = () => {
         stagger: 0.1,
         ease: "power2.out",
       },
-      "-=0.5"
+      "-=0.5",
     );
 
     // Menu button
@@ -122,12 +122,13 @@ const Header = () => {
         duration: 0.7,
         ease: "back.out(1.6)",
       },
-      "-=0.6"
+      "-=0.6",
     );
   });
 
   return (
-    <header className="w-full  flex justify-between items-center px-3 lg:px-11 sticky top-0 left-0 z-50 bg-[#F4FCFD] border-b-2 border-b-gray-200">
+    // i removed sticky position from header as a test it was sticky left-0 top-0
+    <header className="w-full  flex justify-between items-center px-3 lg:px-11 z-50 bg-[#F4FCFD] border-b-2 border-b-gray-200">
       <div className="intro-overlay fixed inset-0 bg-[#F4FCFD] flex items-center justify-center z-9999 ">
         <Image
           src={logo}
@@ -158,7 +159,7 @@ const Header = () => {
                   "font-bold text-amber-400": isActive,
                   "font-semibold text-black": !isActive,
                 },
-                isArabic ? cairo.className : inter.className
+                isArabic ? cairo.className : inter.className,
               )}
             >
               {isArabic ? el.titleAr : el.titleEn}

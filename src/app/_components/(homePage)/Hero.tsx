@@ -14,7 +14,7 @@ gsap.registerPlugin(ScrollTrigger);
 const Hero = () => {
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
   const anStart = isMobile ? "top top+=300" : "top top+=500";
-  const { isArabic } = useIsArabic();
+  const { isArabic, locale } = useIsArabic();
   const t = useTranslations("Hero");
   useGSAP(() => {
     // starter animation
@@ -23,19 +23,19 @@ const Hero = () => {
         ".word-up",
         { y: 50, scale: 0.8, opacity: 0 },
         { y: 0, scale: 1, opacity: 1, duration: 1.2, ease: "power4.out" },
-        "startHero"
+        "startHero",
       )
       .fromTo(
         ".word-down",
         { y: -50, scale: 0.8, opacity: 0 },
         { y: 0, scale: 1, opacity: 1, duration: 1.2, ease: "power4.out" },
-        "startHero"
+        "startHero",
       )
       .fromTo(
         ".contact-button",
         { y: -20, opacity: 0 },
         { y: 0, opacity: 1, duration: 1, ease: "power4.out" },
-        "startHero"
+        "startHero",
       );
     //scroll animation
     const scrollTl = gsap.timeline();
@@ -54,7 +54,7 @@ const Hero = () => {
       })
       .to("#hero_image", {
         position: "sticky",
-        top: "20vh",
+        top: "0",
         duration: 2,
         borderRadius: "20px",
         scrollTrigger: {
@@ -66,9 +66,9 @@ const Hero = () => {
       })
       .to("#hero_image", {
         width: "99vw",
-        height: "70vh",
+        height: "99vh",
         position: "sticky",
-        top: "20vh",
+        top: "0",
         borderRadius: "0px",
         duration: 1,
         scrollTrigger: {
@@ -88,7 +88,7 @@ const Hero = () => {
         <h1
           className={clsx(
             "text-3xl lg:text-7xl text-[#143C58] font-semibold text-center leading-snug",
-            isArabic ? aref.className : poppins.className
+            isArabic ? aref.className : poppins.className,
           )}
         >
           <span className="word-up inline-block mr-4 ">{t("first")}</span>
@@ -100,7 +100,7 @@ const Hero = () => {
           <span className="word-down inline-block mr-4">{t("sixth")}</span>
         </h1>
         <Link
-          href={"/contact"}
+          href={`/${locale}/contact`}
           className="bg-[#1E3B4E] w-fit text-gray-100 px-6 py-3 rounded-md font-medium hover:bg-[#143C58] transition contact-button leading-snug"
         >
           {t("HeroBtn")}
