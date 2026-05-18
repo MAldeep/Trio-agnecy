@@ -1,10 +1,10 @@
-export const NavLinks: { 
+export const NavLinks: {
   titleAr: string;
   titleEn: string;
   to: string;
-  }[] = [
+}[] = [
   {
-    titleAr : "الرئيسية",
+    titleAr: "الرئيسية",
     titleEn: "Home",
     to: "/",
   },

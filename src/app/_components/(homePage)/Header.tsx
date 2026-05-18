@@ -2,21 +2,15 @@
 import Image from "next/image";
 import logo from "../../assets/images/trio-logo.png";
 import { CiMenuFries } from "react-icons/ci";
-import { NavLinks } from "./NavLinks";
 import { useGSAP } from "@gsap/react";
 import { useState } from "react";
 import SideMenu from "./SideMenu";
 import { heroTimeline } from "./HeroTimeline";
-import { usePathname } from "next/navigation";
 import { Link } from "../../../../i18n/routing";
 import LanguageSwitcher from "./LanguageSwitcher";
-import { cairo, inter } from "@/app/fonts";
-import { useIsArabic } from "../shared components/useIsArabic";
-import clsx from "clsx";
+import NavLinksForHeader from "../shared components/NavLinksForHeader";
 const Header = () => {
-  const { isArabic, locale } = useIsArabic();
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const pathname = usePathname();
   useGSAP(() => {
     // Basic Imports
     const introLogo = document.querySelector(".intro-logo") as HTMLElement;
@@ -143,30 +137,7 @@ const Header = () => {
       </Link>
       <LanguageSwitcher />
       {/* NavLinks */}
-      <div className="w-1/2 lg:flex justify-between items-center hidden links">
-        {NavLinks.map((el, idx) => {
-          const pathWithoutLocale = pathname.replace(`/${locale}`, "") || "/";
-          const isActive =
-            pathWithoutLocale === el.to ||
-            (pathWithoutLocale.startsWith(el.to) && el.to !== "/");
-          return (
-            <Link
-              href={el.to}
-              key={idx}
-              className={clsx(
-                "text-[18px]",
-                {
-                  "font-bold text-amber-400": isActive,
-                  "font-semibold text-black": !isActive,
-                },
-                isArabic ? cairo.className : inter.className,
-              )}
-            >
-              {isArabic ? el.titleAr : el.titleEn}
-            </Link>
-          );
-        })}
-      </div>
+      <NavLinksForHeader />
       {/* Burger Menu */}
       <CiMenuFries
         className=" font-bold text-2xl block lg:hidden text-gray-950 menu"
@@ -176,5 +147,4 @@ const Header = () => {
     </header>
   );
 };
-
 export default Header;
