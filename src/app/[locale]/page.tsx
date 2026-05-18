@@ -6,10 +6,8 @@ import Hero from "../_components/(homePage)/Hero";
 import About from "../_components/(homePage)/About";
 import Services from "../_components/(homePage)/Services";
 import ProjectsSection from "../_components/(projects)/ProjectsSection";
-import { useIsArabic } from "../_components/shared components/useIsArabic";
 
 const Home = () => {
-  const { locale } = useIsArabic();
   useEffect(() => {
     heroTimeline.play();
   }, []);
@@ -17,7 +15,7 @@ const Home = () => {
     <div className="w-full relative">
       <Header />
       <Hero />
-      <About locale={locale} />
+      <About />
       <Services />
       <ProjectsSection />
     </div>

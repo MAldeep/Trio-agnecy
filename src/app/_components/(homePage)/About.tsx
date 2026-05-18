@@ -3,9 +3,10 @@ import { useGSAP } from "@gsap/react";
 import clsx from "clsx";
 import gsap, { SplitText, ScrollTrigger } from "gsap/all";
 import { useTranslations } from "next-intl";
+import { useIsArabic } from "../shared components/useIsArabic";
 gsap.registerPlugin(SplitText, ScrollTrigger);
-const About = ({ locale }: { locale: string }) => {
-  const isArabic = locale === "ar";
+const About = () => {
+  const { isArabic } = useIsArabic();
   const t = useTranslations("About");
   useGSAP(() => {
     const split = new SplitText("#text_about", { type: "words" });
@@ -25,7 +26,7 @@ const About = ({ locale }: { locale: string }) => {
           end: "top top",
           scrub: true,
         },
-      }
+      },
     );
   }, []);
   return (
@@ -34,7 +35,7 @@ const About = ({ locale }: { locale: string }) => {
         <p
           className={clsx(
             "text-3xl lg:text-5xl text-[#1E3B4E]",
-            isArabic ? aref.className : poppins.className
+            isArabic ? aref.className : poppins.className,
           )}
         >
           {t("head")}
