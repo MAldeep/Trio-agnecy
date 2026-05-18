@@ -5,10 +5,10 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 
 export default function WhatsAppButton() {
-  const phone = "01064661009";
+  const phone = "+201093998138";
   const message = "Hello, I’m interested!";
   const whatsappLink = `https://wa.me/${phone}?text=${encodeURIComponent(
-    message
+    message,
   )}`;
 
   const buttonRef = useRef<HTMLAnchorElement>(null);
@@ -36,7 +36,7 @@ export default function WhatsAppButton() {
       gsap.fromTo(
         tooltipRef.current,
         { opacity: 0, x: 10 },
-        { opacity: 1, x: 0, duration: 0.25, ease: "power2.out" }
+        { opacity: 1, x: 0, duration: 0.25, ease: "power2.out" },
       );
     } else {
       gsap.to(tooltipRef.current, {
