@@ -1,4 +1,3 @@
-"use client";
 import gsap from "gsap/all";
 import { useTranslations } from "next-intl";
 import { useEffect, useRef } from "react";
@@ -29,7 +28,7 @@ export default function AboutUsText() {
         },
         duration: 0.8,
         ease: "power1.inOut",
-      }
+      },
     );
   }, []);
 
@@ -44,7 +43,7 @@ export default function AboutUsText() {
       ref={h1Ref}
       className={clsx(
         "text-5xl lg:text-8xl text-[#1E3B4E] font-semibold",
-        isArabic ? aref.className : poppins.className
+        isArabic ? aref.className : poppins.className,
       )}
     >
       {textElements}
