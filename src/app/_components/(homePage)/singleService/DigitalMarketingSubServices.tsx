@@ -1,8 +1,8 @@
 import { useTranslations } from "next-intl";
-import EmailMarketing from "./EmailMarketing";
-import PlanningStrategies from "./PlanningStrategies";
-import SocialMediaMarketing from "./SocialMediaMarketing";
-import SubService from "./SubService";
+import EmailMarketing from "../subServices/EmailMarketing";
+import PlanningStrategies from "../subServices/PlanningStrategies";
+import SocialMediaMarketing from "../subServices/SocialMediaMarketing";
+import SubService from "../SubService";
 
 export default function DigitalMarketingSubServices() {
   const t = useTranslations("Services");

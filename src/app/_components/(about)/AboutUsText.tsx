@@ -10,12 +10,12 @@ export default function AboutUsText() {
   const { isArabic } = useIsArabic();
   const text: string = t("about");
   const h1Ref = useRef<HTMLHeadingElement | null>(null);
+  // For words animation
   useEffect(() => {
     if (!h1Ref.current) return;
 
     const words: NodeListOf<HTMLSpanElement> =
       h1Ref.current.querySelectorAll(".animated-word");
-
     gsap.fromTo(
       words,
       { filter: "brightness(50%)" },
@@ -42,7 +42,7 @@ export default function AboutUsText() {
     <h1
       ref={h1Ref}
       className={clsx(
-        "text-5xl lg:text-8xl text-[#1E3B4E] font-semibold",
+        "text-3xl text-[#1E3B4E] font-semibold",
         isArabic ? aref.className : poppins.className,
       )}
     >

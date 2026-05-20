@@ -1,8 +1,8 @@
 import { useTranslations } from "next-intl";
-import BrandIdentity from "./BrandIdentity";
-import PrintDesign from "./PrintDesign";
-import SocialMediaDesign from "./SocialMediaDesign";
-import SubService from "./SubService";
+import BrandIdentity from "../subServices/BrandIdentity";
+import PrintDesign from "../../../../../PrintDesign";
+import SocialMediaDesign from "../subServices/SocialMediaDesign";
+import SubService from "../SubService";
 
 export default function GraphicDesignSubServices() {
   const t = useTranslations("Services");

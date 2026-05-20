@@ -1,9 +1,9 @@
 import { useTranslations } from "use-intl";
-import AnimationMotionGraphics from "./AnimationMotionGraphics";
-import CommercialsAndAdvertisements from "./CommercialsAndAdvertisements";
-import EventCoverageLiveStreaming from "./EventCoverageLiveStreaming";
-import SubService from "./SubService";
-import VideoEditing from "./VideoEditing";
+import AnimationMotionGraphics from "../subServices/AnimationMotionGraphics";
+import CommercialsAndAdvertisements from "../subServices/CommercialsAndAdvertisements";
+import EventCoverageLiveStreaming from "../subServices/EventCoverageLiveStreaming";
+import SubService from "../SubService";
+import VideoEditing from "../subServices/VideoEditing";
 
 export default function MediaProductionSubServices() {
   const t = useTranslations("Services.MediaProductionSubServices");

@@ -1,9 +1,9 @@
 import { useTranslations } from "next-intl";
-import AppMaintenance from "./AppMaintenance";
-import ECommerceSolutions from "./ECommerceSolutions";
-import SubService from "./SubService";
-import UIDesign from "./UIDesign";
-import WebsiteDevelopment from "./WebsiteDevelopment";
+import AppMaintenance from "../subServices/AppMaintenance";
+import ECommerceSolutions from "../subServices/ECommerceSolutions";
+import SubService from "../SubService";
+import UIDesign from "../subServices/UIDesign";
+import WebsiteDevelopment from "../subServices/WebsiteDevelopment";
 
 export default function WebMobileAppsSubServices() {
   const t = useTranslations("Services.WebMobileAppsSubServices");

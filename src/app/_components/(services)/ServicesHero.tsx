@@ -4,9 +4,9 @@ import ServicesHorizontalImageReveal from "./ServicesHorizontalImageReveal";
 import DigitalMarketing from "./DigitalMarketing";
 import GraphicDesign from "./GraphicDesign";
 import WebMobileApps from "./WebMobileApps";
-import ContentCreation from "../(homePage)/ContentCreation";
-import SEOOptimization from "../(homePage)/SEOOptimization";
-import MediaBuying from "../(homePage)/MediaBuying";
+import ContentCreation from "../(homePage)/singleServiceWithoutSubs/ContentCreation";
+import SEOOptimization from "../(homePage)/singleServiceWithoutSubs/SEOOptimization";
+import MediaBuying from "../(homePage)/singleServiceWithoutSubs/MediaBuying";
 import MediaProduction from "./MediaProduction";
 import { useTranslations } from "next-intl";
 import { useIsArabic } from "../shared components/useIsArabic";
@@ -28,7 +28,7 @@ export default function ServicesHero() {
         y: 0,
         duration: 0.7,
         ease: "power2.inOut",
-      }
+      },
     );
     heroTimeline.fromTo(
       "#service_title",
@@ -41,7 +41,7 @@ export default function ServicesHero() {
         y: 0,
         duration: 0.7,
         ease: "power2.inOut",
-      }
+      },
     );
   }, []);
   return (
@@ -54,7 +54,7 @@ export default function ServicesHero() {
         <h1
           className={clsx(
             "text-5xl lg:text-8xl font-semibold",
-            isArabic ? aref.className : poppins.className
+            isArabic ? aref.className : poppins.className,
           )}
           id="service_title"
         >

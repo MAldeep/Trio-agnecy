@@ -1,13 +1,13 @@
 import { useTranslations } from "next-intl";
-import ContentCreation from "./ContentCreation";
-import DigitalMarketingSubServices from "./DigitalMarketingSubServices";
-import GraphicDesignSubServices from "./GraphicDesignSubServices";
-import MediaBuying from "./MediaBuying";
-import MediaProductionSubServices from "./MediaProductionSubServices";
-import SEOOptimization from "./SEOOptimization";
+import ContentCreation from "./singleServiceWithoutSubs/ContentCreation";
+import DigitalMarketingSubServices from "./singleService/DigitalMarketingSubServices";
+import GraphicDesignSubServices from "./singleService/GraphicDesignSubServices";
+import MediaBuying from "./singleServiceWithoutSubs/MediaBuying";
+import MediaProductionSubServices from "./singleService/MediaProductionSubServices";
+import SEOOptimization from "./singleServiceWithoutSubs/SEOOptimization";
 import SingleService from "./SingleService";
 import SingleServiceWithoutSubs from "./SingleServiceWithoutSubs";
-import WebMobileAppsSubServices from "./WebMobileAppsSubServices";
+import WebMobileAppsSubServices from "./singleService/WebMobileAppsSubServices";
 
 export default function Services() {
   const t = useTranslations("Services");
